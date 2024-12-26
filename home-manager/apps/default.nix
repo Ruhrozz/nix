@@ -12,5 +12,6 @@
     ./zoxide.nix
     ./thefuck.nix
     ./bat.nix
+    ./direnv.nix
   ];
 }
