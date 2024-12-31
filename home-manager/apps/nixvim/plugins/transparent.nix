@@ -8,6 +8,7 @@
         "TroubleNormalNC"
         "TroubleCount"
         "TroubleFsCount"
+        "TelescopeBorder"
         "DiagnosticSignError"
         "DiagnosticSignWarn"
         "DiagnosticSignWarn"
