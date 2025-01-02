@@ -18,6 +18,7 @@
 
     bind = [
       # Window/Session actions.
+      # TODO: wf-recorder -g "$(slurp)" -f "${XDG_VIDEOS_DIR}/screencast_$(date +'%Y-%m-%d_%H-%M-%S').mp4"
       "$mod, W, killactive,"
       "$mod SHIFT, F, fullscreen, 1"
       "$mod, F, fullscreen,"
@@ -51,7 +52,7 @@
       "$mod SHIFT, A, exec, ags -t launcher"
 
       # Screenshot
-      "$mod SHIFT, Z, exec, hyprshot -m region --clipboard-only"
+      "$mod SHIFT, Z, exec, hyprshot --freeze -m region --clipboard-only"
 
       # Move window focus with vim keys.
       "$mod, h, movefocus, l"
