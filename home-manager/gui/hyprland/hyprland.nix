@@ -10,8 +10,8 @@
     # plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];
   };
 
-  home.packages = with pkgs;
-    [
-      hyprshot # screenshot handler
-    ];
+  home.packages = with pkgs; [
+    hyprpicker
+    hyprshot # screenshot handler
+  ];
 }
