@@ -1,6 +1,6 @@
 { dir, ... }: {
   themeName = "catppuccin-mocha";
-  wallpaper = ../assets/wallpapers/k-on.jpg;
+  wallpaper = ../assets/wallpapers/catppuccin_miku.jpg;
   # Stylix palette override.
   override = { base00 = "11111b"; };
 
