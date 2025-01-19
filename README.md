@@ -17,8 +17,9 @@ Some "nix stuff" repository:
 - Make disk partitioning with [disko](https://github.com/nix-community/disko?ysclid=m37md4ni64813417409):
 
 ```bash
-sudo nix run github:nix-community/disko/latest -- \
+sudo nix --extra-experimental-features "nix-command flakes" run github:nix-community/disko/latest -- \
   --mode disko ./profiles/desktop/disk-config.nix
+
 ```
 
 - Update `hardware-configuration.nix`:
