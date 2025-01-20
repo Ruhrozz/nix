@@ -18,5 +18,6 @@ in {
 
     targets.nixvim.enable =
       lib.mkIf (settings.themeDetails.themeName != null) false;
+    targets.tmux.enable = false;
   };
 }
