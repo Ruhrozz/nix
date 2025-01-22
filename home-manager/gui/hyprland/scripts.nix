@@ -3,6 +3,25 @@
 {
   home.packages = with pkgs; [
     jq
+    libnotify
+    playerctl
+    slurp
+    wf-recorder
+
+    (pkgs.writeScriptBin "hyprrecord" ''
+      #!/usr/bin/env bash
+
+      if pgrep -x "wf-recorder" > /dev/null
+      then
+          pkill -x "wf-recorder"
+      else
+          outpath="$HOME/Screencasts/screencast_$(date +'%Y-%m-%d_%H-%M-%S').mp4"
+          mkdir -p "$HOME/Screencasts"
+          wf-recorder -g "$(slurp)" -f "$outpath"
+          notify-send -h string:x-canonical-append:"" "Screencast Info" "Video saved to $outpath"
+      fi
+    '')
+
     (pkgs.writeScriptBin "hyprworkspace" ''
       #!/usr/bin/env bash
       # close special workspace on focused monitor if one is present
@@ -15,7 +34,7 @@
 
       hyprctl dispatch workspace "$1"
     '')
-    playerctl
+    
     (pkgs.writeScriptBin "hyprmusic" ''
       #!/bin/sh
       set -euo pipefail

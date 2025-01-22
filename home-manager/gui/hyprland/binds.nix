@@ -18,7 +18,6 @@
 
     bind = [
       # Window/Session actions.
-      # TODO: wf-recorder -g "$(slurp)" -f "${XDG_VIDEOS_DIR}/screencast_$(date +'%Y-%m-%d_%H-%M-%S').mp4"
       "$mod, W, killactive,"
       "$mod SHIFT, F, fullscreen, 1"
       "$mod, F, fullscreen,"
@@ -51,8 +50,9 @@
       # Launcher
       "$mod SHIFT, A, exec, ags -t launcher"
 
-      # Screenshot
+      # Screenshot / Screencast
       "$mod SHIFT, Z, exec, hyprshot --freeze -m region --clipboard-only"
+      "$mod SHIFT, R, exec, sh -c 'hyprrecord'"
 
       # Move window focus with vim keys.
       "$mod, h, movefocus, l"
