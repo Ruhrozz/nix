@@ -119,7 +119,13 @@
             nixfmt.enable = true; # nix
             yamlfmt.enable = true; # yaml
             codespell.enable = true; # english
-            shfmt.enable = true; # bash
+            shfmt = {
+              enable = true;
+              settings = {
+                extra_args =
+                  [ "--indent" "4" "--space-redirects" "--simplify" ];
+              };
+            }; # bash
             mdformat.enable = true; # markdown
           };
         };
