@@ -12,7 +12,7 @@
       font = { size = lib.mkForce settings.fontSize; };
 
       scrolling.history = 10000;
-      selection.save_to_clipboard = false;
+      selection.save_to_clipboard = true;
 
       window = {
         class.general = "Alacritty";
