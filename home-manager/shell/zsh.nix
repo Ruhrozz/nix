@@ -21,6 +21,10 @@
       esac
     '';
 
+    envExtra = ''
+      setopt nonomatch
+    '';
+
     sessionVariables = {
       ZSH_DISABLE_COMPFIX = true;
       UV_CACHE_DIR = "$HOME/.cache/uv/";
@@ -52,6 +56,7 @@
     };
 
     history = {
+      share = false;
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
