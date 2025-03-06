@@ -19,6 +19,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Netorking
+  networking.firewall.enable = false;
   networking.hostName = settings.hostname;
   networking.networkmanager = {
     enable = true;

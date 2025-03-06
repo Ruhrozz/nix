@@ -11,7 +11,11 @@
   wayland.windowManager.hyprland.settings = {
     # monitor = [ ", preferred, auto, 1" ];
     # monitor = [ "eDP-1, 1920x1200, auto, 1" ];
-    monitor = [ "eDP-1, 1680x1050, auto, 1" ];
+    monitor = [
+      "eDP-1, 1680x1050, auto, 1"
+      # "eDP-1, 1920x1200, auto, 1"
+      "HDMI-A-1, preferred, auto, 1, mirror, eDP-1"
+    ];
     # monitor = [ "eDP-1, 1440x900, auto, 1" ];
   };
 

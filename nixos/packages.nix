@@ -2,6 +2,8 @@
   environment.systemPackages = with pkgs; [
     pciutils # for `lspci`
     usbutils # for `lsusb`
+    networkmanagerapplet # gui for editing connections
+    nmap # network scanner
     wget # cli download
     curl # cli download
     git # code repositories
