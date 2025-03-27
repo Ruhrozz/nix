@@ -7,5 +7,6 @@
     duf # `df -h` replacement
     ripgrep # for nvim plugin (telescope)
     shellcheck # for nvim plugin (bashls)
+    ffmpeg # working with images and videos in CLI
   ];
 }
