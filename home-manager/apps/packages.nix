@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     sshfs
     unzip
+    iptables
     dust # `du -h -d 1` replacement
     duf # `df -h` replacement
     ripgrep # for nvim plugin (telescope)

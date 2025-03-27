@@ -68,13 +68,22 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     # For widgets like status bar at the top
-    ags.url = "github:Aylur/ags/v1";
+    ags = {
+      url = "github:Aylur/ags/v1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # For customizing system
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # For connection to this machine with VSCode
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # For handling dotfiles in ~/.config/
     home-manager = {
@@ -92,13 +101,6 @@
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Hyprland
-    hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
-      submodules = true;
     };
 
     # hypr-dynamic-cursors = {
