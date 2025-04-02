@@ -11,6 +11,7 @@
     ./neogen.nix
     ./luasnip.nix
     ./transparent.nix
+    ./git-conflict.nix
   ];
 
   programs.nixvim.plugins = {
