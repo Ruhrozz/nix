@@ -11,8 +11,8 @@
         theirs = "ct";
         none = "c0";
         both = "cb";
-        next = "]x";
-        prev = "[x";
+        next = "]c";
+        prev = "[c";
       };
       highlights = {
         current = "DiffText";
