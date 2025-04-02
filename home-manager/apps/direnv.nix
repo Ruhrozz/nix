@@ -18,6 +18,21 @@
       PATH_add "$VIRTUAL_ENV/bin"
       export UV_ACTIVE=1  # or VENV_ACTIVE=1
       export VIRTUAL_ENV
+      export PYTHON_VERSION=$(grep version .venv/pyvenv.cfg | cut -d ' ' -f 3)
+    }
+
+    layout_pyright() {
+      if [[ ! -d "pyrightconfig.json" ]]; then
+          cat > pyrightconfig.json <<EOF
+    {
+      "venvPath": "./",
+      "venv": ".venv/",
+      "pythonVersion": "''${PYTHON_VERSION:-3.10}",
+      "pythonPlatform": "Linux",
+      // "reportMissingImports": false
+    }
+    EOF
+      fi
     }
   '';
 }
