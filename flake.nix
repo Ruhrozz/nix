@@ -103,10 +103,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hypr-dynamic-cursors = {
-    #   url = "github:VirtCode/hypr-dynamic-cursors";
-    #   inputs.hyprland.follows =
-    #     "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
-    # };
+    # Hyprland
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+    };
   };
 }

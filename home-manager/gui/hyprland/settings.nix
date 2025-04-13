@@ -3,13 +3,13 @@ let details = settings.themeDetails;
 in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "swww-daemon &"
-      "ags &"
-      "blueman-applet &"
-      "[workspace 2 silent] firefox"
-      "[workspace 3 silent] nautilus"
-      "[workspace special silent] telegram-desktop"
-      "[workspace special silent] obsidian"
+      "uwsm app -- swww-daemon &"
+      "uwsm app -- ags &"
+      "uwsm app -- blueman-tray &"
+      "[workspace 2 silent] uwsm app -- firefox"
+      "[workspace 3 silent] uwsm app -- nautilus"
+      "[workspace special silent] uwsm app -- telegram-desktop"
+      "[workspace special silent] uwsm app -- obsidian"
     ];
 
     cursor = { no_hardware_cursors = true; };

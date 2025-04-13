@@ -9,13 +9,13 @@
     git # code repositories
     vim # reserve editor
     eog # image viewer
-    vlc # video viewer
-    firefox # browser
-    gnome-calculator # calculator
 
     # Some apps
     telegram-desktop # contacts
     obsidian # all my life is here
+    vlc # video viewer
+    firefox # browser
+    gnome-calculator # calculator
 
     # For ags
     brightnessctl
@@ -42,14 +42,6 @@
     settings.fontPkg
   ];
 
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-      common.default = [ "gtk" ];
-      hyprland.default = [ "hyprland" ];
-    };
-
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
+  # A lot of mpris packages require it.
+  services.gvfs.enable = true;
 }

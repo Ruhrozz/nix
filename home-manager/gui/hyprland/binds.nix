@@ -29,18 +29,18 @@
       "$mod, P, pseudo,"
 
       # Lock screen
-      "$mod, Escape, exec, hyprlock"
+      "$mod, Escape, exec, uwsm app -- hyprlock"
 
       # Application shortcuts.
-      "$mod, Return, exec, ${settings.term}"
-      "$mod, B, exec, ${settings.browser}"
-      "$mod, C, exec, gnome-calculator"
-      "$mod, D, exec, nautilus"
-      "$mod, T, exec, telegram-desktop"
-      "$mod, O, exec, obsidian"
-      "$mod, N, exec, neovide"
-      "$mod CTRL, S, exec, __NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only steam"
-      "$mod CTRL, O, exec, osu\!"
+      "$mod, Return, exec, uwsm app -- ${settings.term}"
+      "$mod, B, exec, uwsm app -- ${settings.browser}"
+      "$mod, C, exec, uwsm app -- gnome-calculator"
+      "$mod, D, exec, uwsm app -- nautilus"
+      "$mod, T, exec, uwsm app -- telegram-desktop"
+      "$mod, O, exec, uwsm app -- obsidian"
+      "$mod, N, exec, uwsm app -- neovide"
+      "$mod CTRL, S, exec, uwsm app -- __NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only steam"
+      "$mod CTRL, O, exec, uwsm app -- osu\!"
       "$mod CTRL, N, exec, notify-send $(hyprctl activewindow | grep class)"
 
       # Special workspace
@@ -48,11 +48,11 @@
       "$mod SHIFT, S, movetoworkspacesilent, special"
 
       # Launcher
-      "$mod SHIFT, A, exec, ags -t launcher"
+      "$mod SHIFT, A, exec, uwsm app -- ags -t launcher"
 
       # Screenshot / Screencast
-      "$mod SHIFT, Z, exec, hyprshot --freeze -m region --clipboard-only"
-      "$mod SHIFT, R, exec, sh -c 'hyprrecord'"
+      "$mod SHIFT, Z, exec, uwsm app -- hyprshot --freeze -m region --clipboard-only"
+      "$mod SHIFT, R, exec, uwsm app -- sh -c 'hyprrecord'"
 
       # Move window focus with vim keys.
       "$mod, h, movefocus, l"
