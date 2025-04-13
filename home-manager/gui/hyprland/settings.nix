@@ -5,11 +5,11 @@ in {
     exec-once = [
       "uwsm app -- swww-daemon &"
       "uwsm app -- ags &"
-      "uwsm app -- blueman-tray &"
       "[workspace 2 silent] uwsm app -- firefox"
       "[workspace 3 silent] uwsm app -- nautilus"
       "[workspace special silent] uwsm app -- telegram-desktop"
       "[workspace special silent] uwsm app -- obsidian"
+      "sleep 5 && uwsm app -- blueman-tray &"
     ];
 
     cursor = { no_hardware_cursors = true; };
