@@ -3,20 +3,20 @@
 
   hostname = "nixos";
   username = "malofeev";
-  name = "Ruhrozz";
-  email = "ruhrozz@bk.ru";
+  name = "Malofeev Ivan";
+  email = "i.malofeev@expasoft.tech";
 
   timezone = "Asia/Novosibirsk";
   locale = "en_US.UTF-8";
 
-  profile = "laptop";
+  profile = "remote";
   dotfilesDir = "/home/${username}/.dotfiles"; # Absolute path of the local repo
   theme = "catppuccin"; # catppuccin / nord
   themeDetails = import (./. + "/themes/${theme}.nix") { dir = dotfilesDir; };
 
   # Default font for terminal
-  font = "DejaVuSansM Nerd Font Mono";
-  # font = "Hack Nerd Font Mono";
+  # font = "DejaVuSansM Nerd Font Mono";
+  font = "Hack Nerd Font Mono";
   fontPkg = (pkgs.nerdfonts.override { fonts = [ "DejaVuSansMono" "Hack" ]; });
   fontSize = 12;
 
