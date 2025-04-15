@@ -10,7 +10,7 @@
   stylix.targets.hyprland.enable = false;
   wayland.windowManager.hyprland.settings = {
     # monitor = [ ", preferred, auto, 1" ];
-    monitor = [ "HDMI-A-2, 1920x1080, auto, 1" ];
+    # monitor = [ "HDMI-A-1, 1920x1080, auto, 1" ];
   };
 
   home = {

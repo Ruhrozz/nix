@@ -13,6 +13,7 @@ in {
     ];
 
     cursor = { no_hardware_cursors = true; };
+    "plugin:dynamic-cursors".mode = "rotate";
 
     general = {
       gaps_in = 8;

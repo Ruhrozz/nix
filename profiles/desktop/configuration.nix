@@ -13,7 +13,10 @@
     ../../nixos/nautilus.nix
     ../../nixos/nix-ld.nix
     ../../nixos/packages.nix
-    ../../nixos/nvidia.nix
+    ../../nixos/opengl.nix
+    ../../nixos/hyprland.nix
+    # ../../nixos/gitlab_runner.nix
+    # ../../nixos/nvidia.nix
 
     # For some games
     ../../nixos/steam.nix
@@ -22,11 +25,18 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-runtime-6.0.36"
+    "dotnet-sdk-wrapped-6.0.428"
+    "dotnet-sdk-6.0.428"
+    "openssl-1.1.1w"
+  ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Netorking
   networking.hostName = settings.hostname;
   networking.networkmanager.enable = true;
+  networking.firewall.enable = false;
 
   # Timezone
   time.timeZone = settings.timezone;
@@ -42,7 +52,7 @@
   users.users.${settings.username} = {
     isNormalUser = true;
     description = settings.username;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "dialout" ];
   };
 
   environment.systemPackages = with pkgs; [ osu-lazer ];

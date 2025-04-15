@@ -22,8 +22,8 @@
     swww
 
     # For work
-    shotcut # video editor
     openvpn
+    shotcut # video editor
     yt-dlp # download from youtube
     anydesk # remote desktop
     libreoffice # documents
