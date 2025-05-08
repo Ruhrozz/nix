@@ -1,10 +1,9 @@
-{ config, settings, ... }:
+{ settings, ... }:
 let details = settings.themeDetails;
 in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "uwsm app -- swww-daemon &"
-      "uwsm app -- ags &"
+      "uwsm app -- waybar"
       "[workspace 2 silent] uwsm app -- firefox"
       "[workspace 3 silent] uwsm app -- nautilus"
       "[workspace special silent] uwsm app -- telegram-desktop"
@@ -13,15 +12,12 @@ in {
     ];
 
     cursor = { no_hardware_cursors = true; };
-    "plugin:dynamic-cursors".mode = "rotate";
 
     general = {
       gaps_in = 8;
       gaps_out = 16;
       border_size = 2;
       allow_tearing = true;
-      "col.active_border" = "rgba(${config.lib.stylix.colors.base0D}ff)";
-      "col.inactive_border" = "rgba(${config.lib.stylix.colors.base02}ff)";
     };
 
     decoration = {
@@ -42,7 +38,6 @@ in {
         ignore_window = false;
         offset = "2 2";
         range = 20;
-        color = "rgba(${config.lib.stylix.colors.base00}ff)";
       };
     };
 

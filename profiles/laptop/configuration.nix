@@ -26,6 +26,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   i18n.defaultLocale = settings.locale;
   i18n.extraLocaleSettings = { LC_ALL = settings.locale; };
+  i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "ru_RU.UTF-8/UTF-8"];
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
   ];

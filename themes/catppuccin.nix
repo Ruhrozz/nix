@@ -8,21 +8,8 @@
   overrideBtop = true;
   btopTheme = "catppuccin";
 
-  # Hyprland and ags.
-  opacity = 0.8; # affects theme.blur in ags.
-  rounding = 25; # affects theme.rounding in ags.
-  shadow = false; # affects theme.shadows in ags.
-
-  # Override default settings in ags.
-  ags = {
-    theme = {
-      palette = { widget = "#25253a"; };
-      border = {
-        width = 1;
-        opacity = 96;
-      };
-    };
-    bar = { curved = true; };
-    widget = { opacity = 0; };
-  };
+  # Hyprland
+  opacity = 0.8;
+  rounding = 25;
+  shadow = false;
 }

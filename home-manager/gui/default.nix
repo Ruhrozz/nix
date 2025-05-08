@@ -1,4 +1,9 @@
-{ ... }: {
-  imports =
-    [ ./hyprland ./mpd ./alacritty.nix ./easyeffects.nix ./neovide.nix ];
+{
+  imports = [
+    ./hyprland
+    ./alacritty.nix
+    ./hyprpaper.nix
+    ./notification-daemon.nix
+    ./waybar
+  ];
 }

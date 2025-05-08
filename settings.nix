@@ -9,7 +9,7 @@
   timezone = "Asia/Novosibirsk";
   locale = "en_US.UTF-8";
 
-  profile = "remote";
+  profile = "laptop";
   dotfilesDir = "/home/${username}/.dotfiles"; # Absolute path of the local repo
   theme = "catppuccin"; # catppuccin / nord
   themeDetails = import (./. + "/themes/${theme}.nix") { dir = dotfilesDir; };
@@ -20,7 +20,7 @@
   fontPkg = (pkgs.nerdfonts.override { fonts = [ "DejaVuSansMono" "Hack" ]; });
   fontSize = 12;
 
-  # Icon theme for nautilus, ags and so on
+  # Icon theme for nautilus
   icons = "Adwaita";
   iconsPkg = pkgs.adwaita-icon-theme;
 

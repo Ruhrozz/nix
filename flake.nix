@@ -67,12 +67,6 @@
     # Required package
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
-    # For widgets like status bar at the top
-    ags = {
-      url = "github:Aylur/ags/v1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # For customizing system
     stylix = {
       url = "github:danth/stylix/release-24.11";

@@ -4,6 +4,7 @@ let details = settings.themeDetails;
 in {
   stylix = {
     enable = true;
+    autoEnable = true;
     polarity = "dark";
     image = details.wallpaper;
     base16Scheme = lib.mkIf (details.themeName != null)
@@ -22,8 +23,12 @@ in {
       package = pkgs.phinger-cursors;
     };
 
-    targets.nixvim.enable =
-      lib.mkIf (settings.themeDetails.themeName != null) false;
-    targets.tmux.enable = false;
+    targets = {
+      nixvim.enable = true;
+      tmux.enable = true;
+      hyprland.enable = true;
+      hyprpaper.enable = true;
+      waybar.enable = false;
+    };
   };
 }

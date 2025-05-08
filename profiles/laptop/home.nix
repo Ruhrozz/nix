@@ -7,7 +7,6 @@
   ];
 
   # Hypland GUI settings
-  stylix.targets.hyprland.enable = false;
   wayland.windowManager.hyprland.settings = {
     # monitor = [ ", preferred, auto, 1" ];
     # monitor = [ "eDP-1, 1920x1200, auto, 1" ];

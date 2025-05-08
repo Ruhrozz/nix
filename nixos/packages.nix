@@ -17,10 +17,6 @@
     firefox # browser
     gnome-calculator # calculator
 
-    # For ags
-    brightnessctl
-    swww
-
     # For work
     openvpn
     shotcut # video editor

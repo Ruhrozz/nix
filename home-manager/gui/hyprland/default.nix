@@ -1,8 +1,5 @@
-{ ... }:
-
 {
   imports = [
-    ./ags.nix
     ./env.nix
     ./binds.nix
     ./scripts.nix

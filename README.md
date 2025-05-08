@@ -6,7 +6,6 @@ Some "nix stuff" repository:
 - NixOS
 - Home-manager
 - Stylix
-- AGS
 
 # Desktop version installation
 
@@ -58,8 +57,3 @@ git clone https://github.com/Ruhrozz/nix.git ~/.dotfiles
 nix --extra-experimental-features "nix-command flakes" run github:nix-community/home-manager -- \
   switch -b backup --flake ~/.dotfiles --extra-experimental-features 'nix-command flakes'
 ```
-
-# Appreciation
-
-Special thanks to Nikita Zheleztsov (Serpentian) and his [AlfheimOS](https://github.com/Serpentian/AlfheimOS) for being a starting-point of this repository.
-It was so hard to find a good NixOS configuration with custom SOTA status bar such as [ags](https://github.com/adventuregamestudio/ags) and Hyprland window manager.

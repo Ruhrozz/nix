@@ -1,6 +1,10 @@
-{ settings, ... }:
+{ settings, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    brightnessctl # required for "binde, XF86MonBrightness"
+  ];
+
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
 
@@ -8,12 +12,11 @@
     bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
 
     binde = [
-      ", XF86AudioRaiseVolume, exec, pulsemixer --change-volume +5"
-      ", XF86AudioLowerVolume, exec, pulsemixer --change-volume -5"
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
       ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
-      "$mod ALT, k, exec, pulsemixer --change-volume +5"
-      "$mod ALT, j, exec, pulsemixer --change-volume -5"
     ];
 
     bind = [
@@ -47,9 +50,6 @@
       "$mod, S, togglespecialworkspace"
       "$mod SHIFT, S, movetoworkspacesilent, special"
 
-      # Launcher
-      "$mod SHIFT, A, exec, uwsm app -- ags -t launcher"
-
       # Screenshot / Screencast
       "$mod SHIFT, Z, exec, uwsm app -- hyprshot --freeze -m region --clipboard-only"
       "$mod SHIFT, R, exec, uwsm app -- sh -c 'hyprrecord'"
@@ -61,12 +61,10 @@
       "$mod, j, movefocus, d"
 
       # Music control
-      "$mod ALT, m, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
-      ", XF86AudioMicMute, exec, pulsemixer --id $(pulsemixer --list-sources | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
-      ", XF86AudioMute, exec, pulsemixer --id $(pulsemixer --list-sinks | cut -f3 | grep 'Default' | cut -d ',' -f 1 | cut -c 6-) --toggle-mute"
-      "$mod ALT, l, exec, hyprmusic next"
-      "$mod ALT, h, exec, hyprmusic previous"
-      "$mod ALT, p, exec, hyprmusic play-pause"
+      "$mod, XF86AudioPlay, exec, playerctl play-pause"
+      "$mod, XF86AudioPause, exec, playerctl play-pause"
+      "$mod, XF86AudioNext, exec, playerctl next"
+      "$mod, XF86AudioPrev, exec, playerctl previous"
 
       # Swap windows with vim keys
       "$mod SHIFT, h, swapwindow, l"
