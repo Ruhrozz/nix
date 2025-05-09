@@ -41,6 +41,7 @@
   # Timezone
   time.timeZone = settings.timezone;
   services.chrony.enable = true;
+  services.deluge.enable = true;
 
   # Locale
   i18n.defaultLocale = settings.locale;

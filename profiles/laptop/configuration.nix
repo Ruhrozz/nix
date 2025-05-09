@@ -45,6 +45,7 @@
   # Timezone
   time.timeZone = settings.timezone;
   services.chrony.enable = true;
+  services.deluge.enable = true;
 
   # Users
   users.users.root.initialHashedPassword =
