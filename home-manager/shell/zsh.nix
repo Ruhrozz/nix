@@ -1,4 +1,4 @@
-{ config, ... }:
+{ settings, config, ... }:
 
 {
   programs.zsh = {
@@ -33,20 +33,18 @@
     };
 
     shellAliases = {
-      hms = "home-manager switch --flake ~/nix/home-manager/";
+      hms = "home-manager switch --flake ${settings.dotfilesDir}";
+      nrs = "sudo nixos-rebuild switch --flake ${settings.dotfilesDir}";
 
       # utils
-      fuck = "THEFUCK_EXCLUDE_RULES=fix_file fuck";
       cat = "bat";
       ls = "eza";
       clear = "clear -x";
+      rs = "rsync -ah --info=progress2";
 
       # tmux
       ta = "tmux attach";
       tn = "tmux new";
-
-      # pip
-      plg = "pip list | grep";
 
       # linux
       C0 = "CUDA_VISIBLE_DEVICES=0";
@@ -56,22 +54,9 @@
     };
 
     history = {
-      size = 10000;
+      size = 100000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
-
-    # plugins = [
-    #   {
-    #     name = "powerlevel10k";
-    #     src = pkgs.zsh-powerlevel10k;
-    #     file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-    #   }
-    #   {
-    #     name = "powerlevel10k-config";
-    #     src = ./p10k-config;
-    #     file = "p10k.zsh";
-    #   }
-    # ];
 
     oh-my-zsh = {
       enable = true;
