@@ -1,6 +1,16 @@
-{
+{ inputs, settings, ... }:
+
+# TODO: Remove unstable package. It's dirty hack to make "Cava" work properly
+let unstable_pkgs = inputs.nixpkgs-unstable.legacyPackages.${settings.system};
+in {
+
+  programs.cava = {
+    enable = true;
+    package = unstable_pkgs.cava;
+  };
   programs.waybar = {
     enable = true;
+    package = unstable_pkgs.waybar;
     style = builtins.readFile ./style.css;
     systemd.enable = true;
     settings = {
@@ -12,7 +22,34 @@
         modules-center = [ "hyprland/workspaces" ];
         # modules-right = [ "hyprland/language" "bluetooth" "cpu" "memory" "disk" "temperature" "wireplumber" "battery" "network" "clock" ];
         modules-right =
-          [ "pulseaudio" "hyprland/language" "clock" "tray" ];
+          [ "pulseaudio" "battery" "hyprland/language" "clock" "tray" ];
+
+        "group/system" = {
+          drawer = {
+            transition-duration = 500;
+            transition-left-to-right = true;
+          };
+          modules = [ "cava" "disk" "cpu" "memory" "temperature" ];
+          orientation = "inherit";
+        };
+
+        cava = {
+          cava_config = "$XDG_CONFIG_HOME/cava/config";
+          framerate = 30;
+          autosens = 1;
+          bars = 14;
+          lower_cutoff_freq = 50;
+          higher_cutoff_freq = 10000;
+          method = "pipewire";
+          source = "auto";
+          stereo = true;
+          bar_delimiter = 0;
+          noise_reduction = 0.77;
+          input_delay = 2;
+          hide_on_silence = true;
+          format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          actions = { on-click-right = "mode"; };
+        };
 
         pulseaudio = {
           format = "{icon} {volume}%";
@@ -22,9 +59,9 @@
         };
 
         clock = {
-          locale = "ru_RU.UTF-8";
+          # locale = "ru_RU.UTF-8";
           timezone = "Asia/Novosibirsk";
-          format = "{:%H:%M %d.%m}";
+          format = "{:%R}";
           format-alt = "{:%H:%M %d.%m.%Y}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
@@ -84,15 +121,6 @@
           max-length = 10;
         };
 
-        "group/system" = {
-          drawer = {
-            transition-duration = 500;
-            transition-left-to-right = true;
-          };
-          modules = [ "disk" "cpu" "memory" "temperature" "battery" ];
-          orientation = "inherit";
-        };
-
         "hyprland/language" = {
           format-en = "EN";
           format-ru = "RU";
@@ -102,6 +130,7 @@
           format = " {id} ";
           disable-scroll = true;
           sort-by-name = true;
+          persistent-workspaces."*" = 5;
         };
 
         reload_style_on_change = true;

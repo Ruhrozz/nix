@@ -43,6 +43,8 @@
   margin: 5px 5px;
 }
 
+#cava,
+#disk,
 #tray,
 #clock,
 #language,
@@ -68,31 +70,19 @@ tooltip {
 /* ======================================== */
 
 
-#disk {
+#cava {
   background-color: @surface0;
   border-radius: 1rem;
   margin: 5px;
-  margin-left: 1rem;
   padding: 0.5rem 1rem;
 }
 
-#cpu {
-  color: @sky;
+#disk {
+  margin-left: 1rem;
   border-radius: 1rem 0px 0px 1rem;
 }
 
-#memory {
-  color: @peach;
-  border-radius: 0;
-}
-
 #temperature {
-  color: @red;
-  border-radius: 0;
-}
-
-#battery {
-  color: @green;
   border-radius: 0px 1rem 1rem 0px;
 }
 
@@ -126,17 +116,24 @@ tooltip {
 }
 
 #workspaces button.active {
-  color: @blue;
+  color: @text;
+  background: radial-gradient(circle, 
+    @surface1 40%,
+    @surface0 60%
+  );
+}
+
+#workspaces button.empty {
+  color: @base;
 }
 
 #workspaces button:hover {
-  color: @blue;
+  color: @surface2;
 }
 
 /* ^^^^^^^^^^^^^^^^^^^^ Middle ^^^^^^^^^^^^^^^^^^^^ */
 
 #pulseaudio {
-  color: @maroon;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
@@ -146,12 +143,10 @@ tooltip {
 }
 
 #language {
-  color: @peach;
   border-radius: 0;
 }
 
 #clock {
-  color: @blue;
   border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
 }
