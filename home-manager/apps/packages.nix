@@ -12,5 +12,6 @@
     unzip # archivator
     zip # archivator
     p7zip # archivator
+    glibcLocales # fixing locale problems on Ubuntu
   ];
 }

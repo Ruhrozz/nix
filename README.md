@@ -55,5 +55,5 @@ Moreover, remote installation settings are set up by default.
 ```bash
 git clone https://github.com/Ruhrozz/nix.git ~/.dotfiles
 nix --extra-experimental-features "nix-command flakes" run github:nix-community/home-manager -- \
-  switch -b backup --flake ~/.dotfiles --extra-experimental-features 'nix-command flakes'
+  switch -b nixhmbak --flake ~/.dotfiles --extra-experimental-features 'nix-command flakes'
 ```

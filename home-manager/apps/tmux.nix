@@ -6,6 +6,9 @@
     mouse = true;
     terminal = "screen-256color";
     keyMode = "vi";
+    extraConfig = ''
+      set-option -sa terminal-overrides ",xterm*:Tc"
+    '';
     # plugins = with pkgs; [
     #   {
     #     plugin = tmuxPlugins.sysstat;

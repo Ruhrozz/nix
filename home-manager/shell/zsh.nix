@@ -28,12 +28,11 @@
     sessionVariables = {
       ZSH_DISABLE_COMPFIX = true;
       UV_CACHE_DIR = "$HOME/.cache/uv/";
-      UV_LINK_MODE = "symlink";
       TERM = "xterm-256color";
     };
 
     shellAliases = {
-      hms = "home-manager switch --flake ${settings.dotfilesDir}";
+      hms = "home-manager switch --flake ${settings.dotfilesDir} -b nixhmbak";
       nrs = "sudo nixos-rebuild switch --flake ${settings.dotfilesDir}";
 
       # utils
