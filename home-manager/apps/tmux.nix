@@ -4,6 +4,7 @@
   programs.tmux = {
     enable = true;
     mouse = true;
+    shell = "${pkgs.zsh}/bin/zsh";
     terminal = "screen-256color";
     keyMode = "vi";
     extraConfig = ''
