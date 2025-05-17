@@ -18,5 +18,6 @@
     web-devicons.enable = true;
     comment.enable = true;
     nvim-autopairs.enable = true;
+    tmux-navigator.enable = true;
   };
 }

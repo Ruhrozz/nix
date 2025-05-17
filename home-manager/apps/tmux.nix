@@ -10,21 +10,22 @@
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
     '';
-    # plugins = with pkgs; [
-    #   {
-    #     plugin = tmuxPlugins.sysstat;
-    #     extraConfig = ''
-    #       set -g status-right "#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap} | #{sysstat_loadavg} | #[fg=cyan]#(echo $USER)#[default]@#H"
-    #     '';
-    #   }
-    #   {
-    #     plugin = tmuxPlugins.resurrect;
-    #     extraConfig = "set -g @resurrect-strategy-nvim 'session'";
-    #   }
-    #   {
-    #     plugin = tmuxPlugins.continuum;
-    #     extraConfig = "set -g @continuum-restore 'on'";
-    #   }
-    # ];
+    plugins = with pkgs; [
+      tmuxPlugins.vim-tmux-navigator
+      # {
+      #   plugin = tmuxPlugins.sysstat;
+      #   extraConfig = ''
+      #     set -g status-right "#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap} | #{sysstat_loadavg} | #[fg=cyan]#(echo $USER)#[default]@#H"
+      #   '';
+      # }
+      # {
+      #   plugin = tmuxPlugins.resurrect;
+      #   extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+      # }
+      # {
+      #   plugin = tmuxPlugins.continuum;
+      #   extraConfig = "set -g @continuum-restore 'on'";
+      # }
+    ];
   };
 }
