@@ -52,8 +52,8 @@ in {
         };
 
         pulseaudio = {
-          format = "{icon} {volume}%";
-          format-muted = " ";
+          format = " {icon} {volume}%";
+          format-muted = "  ";
           format-icons.default = [ " " " " " " ];
           on-click = "pavucontrol";
         };
@@ -61,8 +61,8 @@ in {
         clock = {
           # locale = "ru_RU.UTF-8";
           timezone = "Asia/Novosibirsk";
-          format = "{:%R}";
-          format-alt = "{:%H:%M %d.%m.%Y}";
+          format = "{:%R} ";
+          format-alt = "{:%H:%M %d.%m.%Y} ";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
             mode = "year";

@@ -17,6 +17,13 @@ in {
       popups = details.opacity;
     };
 
+    fonts = {
+      sansSerif = {
+        package = pkgs.nerdfonts.override { fonts = [ "DejaVuSansMono" ]; };
+        name = "DejaVuSansM Nerd Font";
+      };
+    };
+
     cursor = {
       size = 32;
       name = "phinger-cursors-light";
@@ -28,7 +35,7 @@ in {
       tmux.enable = true;
       hyprland.enable = true;
       hyprpaper.enable = true;
-      waybar.enable = false;
+      waybar.enable = true;
     };
   };
 }
