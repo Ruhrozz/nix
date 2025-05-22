@@ -112,12 +112,12 @@ in {
 
         disk = {
           interval = 30;
-          format = "{percentage_used}% 󰋊 ";
+          format = " {percentage_used}% 󰋊 ";
         };
 
         memory = {
           interval = 30;
-          format = "{}%  ";
+          format = "{}%   ";
           max-length = 10;
         };
 

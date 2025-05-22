@@ -18,6 +18,9 @@ in {
     };
 
     fonts = {
+      sizes = {
+        desktop = 12;
+      };
       sansSerif = {
         package = pkgs.nerdfonts.override { fonts = [ "DejaVuSansMono" ]; };
         name = "DejaVuSansM Nerd Font";
