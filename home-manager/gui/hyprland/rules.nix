@@ -16,12 +16,12 @@
     windowrule = [ "float,title:^(swayimg)(.*)$" ];
 
     windowrulev2 = [
-      "keepaspectratio,class:^(firefox)$,title:^(Picture-in-Picture)$"
-      "noborder,class:^(firefox)$,title:^(Picture-in-Picture)$"
-      "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
-      "pin,class:^(firefox)$,title:^(Picture-in-Picture)$"
-      "pin,class:^(firefox)$,title:^(Firefox)$"
-      "float,class:^(firefox)$,title:^(Firefox)$"
+      "keepaspectratio,class:^(Google-chrome)$,title:^(Picture-in-Picture)$"
+      "noborder,class:^(Google-chrome)$,title:^(Picture-in-Picture)$"
+      "float,class:^(Google-chrome)$,title:^(Picture-in-Picture)$"
+      "pin,class:^(Google-chrome)$,title:^(Picture-in-Picture)$"
+      "pin,class:^(Google-chrome)$,title:^(Google-chrome)$"
+      "float,class:^(Google-chrome)$,title:^(Google-chrome)$"
       "float,class:^(org.gnome.Calculator)$"
     ];
 

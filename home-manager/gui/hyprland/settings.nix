@@ -4,7 +4,7 @@ in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "uwsm app -- waybar"
-      "[workspace 2 silent] uwsm app -- firefox"
+      "[workspace 2 silent] google-chrome-stable"
       "[workspace 3 silent] uwsm app -- nautilus"
       "[workspace special silent] uwsm app -- telegram-desktop"
       "[workspace special silent] uwsm app -- obsidian"
@@ -14,8 +14,8 @@ in {
     cursor = { no_hardware_cursors = true; };
 
     general = {
-      gaps_in = 8;
-      gaps_out = 16;
+      gaps_in = 4;
+      gaps_out = 8;
       border_size = 2;
       allow_tearing = true;
     };

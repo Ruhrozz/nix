@@ -28,8 +28,8 @@
   editor = "nvim";
 
   # Default browser
-  browser = "firefox";
-  browserPkg = pkgs.firefox;
+  browser = "google-chrome-stable";
+  browserPkg = pkgs.google-chrome;
 
   # Default terminal command
   term = "alacritty";

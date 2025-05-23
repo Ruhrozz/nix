@@ -2,8 +2,11 @@
 
 {
   # GPU monitoring, run `nvtop`
-  environment.systemPackages = with pkgs; [ nvtopPackages.full ]; 
+  environment.systemPackages = with pkgs; [ nvtopPackages.full cudatoolkit ];
 
+  environment.sessionVariables.CUDA_HOME = "${pkgs.cudatoolkit}";
+
+  services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware = {

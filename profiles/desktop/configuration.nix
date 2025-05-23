@@ -15,8 +15,9 @@
     ../../nixos/packages.nix
     ../../nixos/opengl.nix
     ../../nixos/hyprland.nix
-    # ../../nixos/gitlab_runner.nix
-    # ../../nixos/nvidia.nix
+    ../../nixos/gitlab_runner.nix
+    ../../nixos/nvidia.nix
+    ../../nixos/docker.nix
 
     # For some games
     ../../nixos/steam.nix
@@ -25,6 +26,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.cudaSupport = true;
   nixpkgs.config.permittedInsecurePackages = [
     "dotnet-runtime-6.0.36"
     "dotnet-sdk-wrapped-6.0.428"
@@ -51,10 +53,14 @@
   # Users
   users.users.root.initialHashedPassword =
     "$y$j9T$3RQ1ut7aoQme6wRqksDAb.$Ed8Gnohw7LO3PKPfrFtpg63.F/0LhULHYHDhpmh1C/2";
+  users.users.gitlab-runner = {
+    isSystemUser = true;
+    group = "docker";
+  };
   users.users.${settings.username} = {
     isNormalUser = true;
     description = settings.username;
-    extraGroups = [ "wheel" "networkmanager" "dialout" ];
+    extraGroups = [ "wheel" "networkmanager" "dialout" "docker" ];
   };
 
   environment.systemPackages = with pkgs; [ osu-lazer ];

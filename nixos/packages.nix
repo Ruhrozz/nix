@@ -14,7 +14,7 @@
     telegram-desktop # contacts
     obsidian # all my life is here
     vlc # video viewer
-    firefox # browser
+    google-chrome # browser
     gnome-calculator # calculator
 
     # For work
