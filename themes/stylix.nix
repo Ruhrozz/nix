@@ -39,6 +39,7 @@ in {
       hyprland.enable = true;
       hyprpaper.enable = true;
       waybar.enable = true;
+      swaync.enable = true;
     };
   };
 }
