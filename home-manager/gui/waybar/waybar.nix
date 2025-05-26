@@ -7,6 +7,15 @@ in {
   programs.cava = {
     enable = true;
     package = unstable_pkgs.cava;
+    settings = {
+      general.framerate = 60;
+      input.method = "alsa";
+      smoothing.noise_reduction = 88;
+      color = {
+        background = "'#000000'";
+        foreground = "'#FFFFFF'";
+      };
+    };
   };
   programs.waybar = {
     enable = true;
@@ -61,8 +70,8 @@ in {
         clock = {
           # locale = "ru_RU.UTF-8";
           timezone = "Asia/Novosibirsk";
-          format = "{:%R} ";
-          format-alt = "{:%H:%M %d.%m.%Y} ";
+          format = "{:%R %b %d} ";
+          format-alt = "{:%R %d.%m} ";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
             mode = "year";
