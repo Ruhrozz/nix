@@ -3,8 +3,7 @@ let details = settings.themeDetails;
 in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "uwsm app -- waybar"
-      "[workspace 2 silent] google-chrome-stable"
+      "[workspace 2 silent] uwsm app -- google-chrome-stable"
       "[workspace 3 silent] uwsm app -- nautilus"
       "[workspace special silent] uwsm app -- telegram-desktop"
       "[workspace special silent] uwsm app -- obsidian"

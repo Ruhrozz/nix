@@ -20,10 +20,11 @@
             {
               home-manager = {
                 useGlobalPkgs = true;
+                backupFileExtension = "nixrsbak";
                 useUserPackages = true;
                 users.${settings.username}.imports = [
                   inputs.nixvim.homeManagerModules.nixvim
-                  inputs.stylix.homeManagerModules.stylix
+                  inputs.stylix.homeModules.stylix
                   (./profiles + ("/" + settings.profile) + "/home.nix")
                 ];
                 extraSpecialArgs = {
@@ -51,8 +52,8 @@
 
           modules = [
             (./. + "/profiles" + ("/" + settings.profile) + "/home.nix")
-            inputs.stylix.homeManagerModules.stylix
             inputs.nixvim.homeManagerModules.nixvim
+            inputs.stylix.homeModules.stylix
           ];
 
           extraSpecialArgs = {
@@ -65,12 +66,12 @@
 
   inputs = {
     # Required package
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # For customizing system
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -82,7 +83,7 @@
 
     # For handling dotfiles in ~/.config/
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

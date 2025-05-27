@@ -22,7 +22,7 @@ in {
         desktop = 12;
       };
       sansSerif = {
-        package = pkgs.nerdfonts.override { fonts = [ "DejaVuSansMono" ]; };
+        package = pkgs.nerd-fonts.dejavu-sans-mono;
         name = "DejaVuSansM Nerd Font";
       };
     };
@@ -40,6 +40,7 @@ in {
       hyprpaper.enable = true;
       waybar.enable = true;
       swaync.enable = true;
+      starship.enable = false;
     };
   };
 }

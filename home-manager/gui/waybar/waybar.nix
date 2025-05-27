@@ -1,12 +1,6 @@
-{ inputs, settings, ... }:
-
-# TODO: Remove unstable package. It's dirty hack to make "Cava" work properly
-let unstable_pkgs = inputs.nixpkgs-unstable.legacyPackages.${settings.system};
-in {
-
+{
   programs.cava = {
     enable = true;
-    package = unstable_pkgs.cava;
     settings = {
       general.framerate = 60;
       input.method = "alsa";
@@ -19,7 +13,6 @@ in {
   };
   programs.waybar = {
     enable = true;
-    package = unstable_pkgs.waybar;
     style = builtins.readFile ./style.css;
     systemd.enable = true;
     settings = {
@@ -61,9 +54,9 @@ in {
         };
 
         pulseaudio = {
-          format = " {icon} {volume}%";
-          format-muted = "  ";
-          format-icons.default = [ " " " " " " ];
+          format = "{icon} {volume}%";
+          format-muted = " 󰖁";
+          format-icons.default = [ " 󰕿" " 󰖀" " 󰕾" ];
           on-click = "pavucontrol";
         };
 

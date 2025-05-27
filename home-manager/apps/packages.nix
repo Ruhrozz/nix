@@ -13,5 +13,6 @@
     zip # archivator
     p7zip # archivator
     glibcLocales # fixing locale problems on Ubuntu
+    neofetch # show system config in terminal
   ];
 }

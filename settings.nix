@@ -15,9 +15,11 @@
   themeDetails = import (./. + "/themes/${theme}.nix") { dir = dotfilesDir; };
 
   # Default font for terminal
-  # font = "DejaVuSansM Nerd Font Mono";
-  font = "Hack Nerd Font Mono";
-  fontPkg = (pkgs.nerdfonts.override { fonts = [ "DejaVuSansMono" "Hack" ]; });
+  font = "DejaVuSansM Nerd Font Mono";
+  fontPkg = pkgs.nerd-fonts.dejavu-sans-mono;
+  # font = "Hack Nerd Font Mono";
+  # fontPkg = pkgs.nerd-fonts.hack;
+
   fontSize = 12;
 
   # Icon theme for nautilus

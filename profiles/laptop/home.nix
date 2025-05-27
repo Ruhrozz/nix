@@ -23,9 +23,6 @@
     homeDirectory = "/home/${settings.username}";
   };
 
-  # Add packages from the pkgs dir
-  nixpkgs.config.allowUnfree = true;
-
   xdg = {
     enable = true;
 
