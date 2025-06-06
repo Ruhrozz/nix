@@ -1,5 +1,7 @@
 { settings, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    settings.browserPkg
+
     pciutils # for `lspci`
     usbutils # for `lsusb`
     networkmanagerapplet # gui for editing connections
@@ -9,12 +11,12 @@
     git # code repositories
     vim # reserve editor
     eog # image viewer
+    cantata # music player
 
     # Some apps
     telegram-desktop # contacts
     obsidian # all my life is here
     vlc # video viewer
-    google-chrome # browser
     gnome-calculator # calculator
 
     # For work
