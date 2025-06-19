@@ -15,7 +15,7 @@
         "$c"
         "$python"
         "[](fg:surface1 bg:surface0)"
-        "$docker_context"
+        "$nix_shell"
         "[](fg:surface0 bg:base)"
         "$time"
         "[](fg:base bg:mantle)"
@@ -68,9 +68,12 @@
         format = "[$all_status$ahead_behind ]($style)";
       };
 
-      docker_context = {
+      nix_shell = {
         style = "bg:surface0 fg:text";
-        format = "[ $symbol $context ]($style)";
+        format = "[ via $symbol$state( ($name)) ]($style)";
+        symbol = "❄️";
+        impure_msg = "";
+        pure_msg = "";
       };
 
       time = {
