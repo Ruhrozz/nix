@@ -23,7 +23,6 @@
                 backupFileExtension = "nixrsbak";
                 useUserPackages = true;
                 users.${settings.username}.imports = [
-                  inputs.nixvim.homeManagerModules.nixvim
                   inputs.stylix.homeModules.stylix
                   (./profiles + ("/" + settings.profile) + "/home.nix")
                 ];
@@ -52,7 +51,6 @@
 
           modules = [
             (./. + "/profiles" + ("/" + settings.profile) + "/home.nix")
-            inputs.nixvim.homeManagerModules.nixvim
             inputs.stylix.homeModules.stylix
           ];
 
@@ -84,12 +82,6 @@
     # For handling dotfiles in ~/.config/
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Customizing my neovim config
-    nixvim = {
-      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
