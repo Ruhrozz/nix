@@ -17,15 +17,20 @@ in {
       popups = details.opacity;
     };
 
-    fonts = {
-      sizes = {
-        desktop = 12;
-      };
-      sansSerif = {
-        package = pkgs.nerd-fonts.dejavu-sans-mono;
-        name = "DejaVuSansM Nerd Font";
-      };
-    };
+    fonts = {                                                                                                            
+      sizes = {                                                                                                          
+        desktop = 12;                                                                                                    
+        terminal = 12;                                                                                                   
+      };                                                                                                                 
+      sansSerif = {                                                                                                      
+        package = pkgs.nerd-fonts.dejavu-sans-mono;                                                                      
+        name = "DejaVuSansM Nerd Font";                                                                                  
+      };                                                                                                                 
+      monospace = {                                                                                                      
+        package = pkgs.nerd-fonts.dejavu-sans-mono;                                                                      
+        name = "DejaVuSansM Nerd Font Mono";                                                                             
+      };                                                                                                                 
+    };   
 
     cursor = {
       size = 32;
@@ -41,6 +46,10 @@ in {
       waybar.enable = true;
       swaync.enable = true;
       starship.enable = false;
+      kitty = {                                                                                                          
+        enable = true;                                                                                                   
+        variant256Colors = true;                                                                                         
+      };
     };
   };
 }

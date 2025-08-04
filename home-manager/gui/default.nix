@@ -1,7 +1,7 @@
 {
   imports = [
     ./hyprland
-    ./alacritty.nix
+    ./terminal.nix
     ./hyprpaper.nix
     ./notification-daemon.nix
     ./waybar

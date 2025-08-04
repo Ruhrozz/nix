@@ -32,6 +32,6 @@
   # Default browser
   browserPkg = pkgs.firefox;
 
-  # Default terminal command
-  termPkg = pkgs.alacritty;
+  # Default terminal
+  termPkg = pkgs.kitty;
 }
