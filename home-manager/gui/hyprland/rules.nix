@@ -15,16 +15,6 @@
 
     windowrule = [ "float,title:^(swayimg)(.*)$" ];
 
-    windowrulev2 = [
-      "keepaspectratio,class:^(Google-chrome)$,title:^(Picture-in-Picture)$"
-      "noborder,class:^(Google-chrome)$,title:^(Picture-in-Picture)$"
-      "float,class:^(Google-chrome)$,title:^(Picture-in-Picture)$"
-      "pin,class:^(Google-chrome)$,title:^(Picture-in-Picture)$"
-      "pin,class:^(Google-chrome)$,title:^(Google-chrome)$"
-      "float,class:^(Google-chrome)$,title:^(Google-chrome)$"
-      "float,class:^(org.gnome.Calculator)$"
-    ];
-
     workspace =
       [ "special,gapsin:24,gapsout:64" "10,border:false,rounding:false" ];
   };

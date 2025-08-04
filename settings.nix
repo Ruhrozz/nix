@@ -30,10 +30,8 @@
   editor = "nvim";
 
   # Default browser
-  browser = "firefox";
   browserPkg = pkgs.firefox;
 
   # Default terminal command
-  term = "alacritty";
   termPkg = pkgs.alacritty;
 }

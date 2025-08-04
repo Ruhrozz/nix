@@ -1,4 +1,4 @@
-{ settings, pkgs, ... }:
+{ settings, pkgs, lib, ... }:
 
 {
   home.packages = with pkgs; [
@@ -35,8 +35,8 @@
       "$mod, Escape, exec, uwsm app -- hyprlock"
 
       # Application shortcuts.
-      "$mod, Return, exec, uwsm app -- ${settings.term}"
-      "$mod, B, exec, uwsm app -- ${settings.browser}"
+      "$mod, Return, exec, uwsm app -- ${lib.getExe settings.termPkg}"
+      "$mod, B, exec, uwsm app -- ${lib.getExe settings.browserPkg}"
       "$mod, C, exec, uwsm app -- gnome-calculator"
       "$mod, U, exec, uwsm app -- deluge"
       "$mod, D, exec, uwsm app -- nautilus"

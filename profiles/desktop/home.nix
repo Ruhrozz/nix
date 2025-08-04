@@ -1,4 +1,4 @@
-{ config, pkgs, settings, ... }: {
+{ config, pkgs, settings, lib, ... }: {
   imports = [
     ../../themes/stylix.nix
     ../../home-manager/gui
@@ -52,8 +52,8 @@
 
   home.sessionVariables = {
     EDITOR = settings.editor;
-    TERM = settings.term;
-    BROWSER = settings.browser;
+    TERM = lib.getExe settings.termPkg;
+    BROWSER = lib.getExe settings.browserPkg;
   };
 
   programs.home-manager.enable = true;

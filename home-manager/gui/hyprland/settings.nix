@@ -1,9 +1,9 @@
-{ settings, ... }:
+{ settings, lib, ... }:
 let details = settings.themeDetails;
 in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "[workspace 2 silent] uwsm app -- google-chrome-stable"
+      "[workspace 2 silent] uwsm app -- ${lib.getExe settings.browserPkg}"
       "[workspace 3 silent] uwsm app -- nautilus"
       "[workspace special silent] uwsm app -- telegram-desktop"
       "[workspace special silent] uwsm app -- obsidian"
