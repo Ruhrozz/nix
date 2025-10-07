@@ -6,7 +6,7 @@
     mouse = true;
     prefix = "C-space";
     shell = "${pkgs.zsh}/bin/zsh";
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
     keyMode = "vi";
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
