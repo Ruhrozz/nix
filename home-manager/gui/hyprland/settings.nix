@@ -5,7 +5,7 @@ in {
     exec-once = [
       "[workspace 2 silent] uwsm app -- ${lib.getExe settings.browserPkg}"
       "[workspace 3 silent] uwsm app -- nautilus"
-      "[workspace special silent] uwsm app -- telegram-desktop"
+      "[workspace special silent] uwsm app -- Telegram"
       "[workspace special silent] uwsm app -- obsidian"
       "sleep 5 && uwsm app -- blueman-tray &"
     ];

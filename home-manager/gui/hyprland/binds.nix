@@ -40,7 +40,7 @@
       "$mod, C, exec, uwsm app -- gnome-calculator"
       "$mod, U, exec, uwsm app -- deluge"
       "$mod, D, exec, uwsm app -- nautilus"
-      "$mod, T, exec, uwsm app -- telegram-desktop"
+      "$mod, T, exec, uwsm app -- Telegram"
       "$mod, O, exec, uwsm app -- obsidian"
       "$mod, N, exec, uwsm app -- neovide"
       "$mod CTRL, S, exec, __NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only uwsm app --  steam"

@@ -1,4 +1,7 @@
-{ settings, pkgs, ... }: {
+{ inputs, settings, pkgs, ... }:
+
+let unstable_pkgs = inputs.nixpkgs-unstable.legacyPackages.${settings.system};
+in {
   environment.systemPackages = with pkgs; [
     settings.browserPkg
 
@@ -14,7 +17,7 @@
     cantata # music player
 
     # Some apps
-    telegram-desktop # contacts
+    unstable_pkgs.telegram-desktop # contacts
     obsidian # all my life is here
     vlc # video viewer
     gnome-calculator # calculator
@@ -26,7 +29,6 @@
     anydesk # remote desktop
     libreoffice # documents
     qgroundcontrol # air fly control
-    sublime4 # text editor
     android-tools # adb
   ];
 
