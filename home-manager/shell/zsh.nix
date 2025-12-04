@@ -36,6 +36,7 @@
       nrs = "sudo nixos-rebuild switch --flake ${settings.dotfilesDir}";
 
       # utils
+      icat = "kitty +kitten icat --align left";
       cat = "bat";
       ls = "eza";
       clear = "clear -x";
