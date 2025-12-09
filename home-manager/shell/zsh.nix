@@ -28,6 +28,7 @@
     sessionVariables = {
       ZSH_DISABLE_COMPFIX = true;
       UV_CACHE_DIR = "$HOME/.cache/uv/";
+      UV_LINK_MODE = "symlink";
       TERM = "xterm-256color";
     };
 
