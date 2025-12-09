@@ -10,6 +10,10 @@
     keyMode = "vi";
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
+      set -sg escape-time 10
+      set -sg focus-events on
+      set -g status-interval 1
+      set -g bell-action none
     '';
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
