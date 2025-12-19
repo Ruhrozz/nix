@@ -42,6 +42,9 @@
       ls = "eza";
       clear = "clear -x";
       rs = "rsync -ah --info=progress2";
+      find_suffix = ''
+        find . -type f | sed 's/.*\.//' | sort -u
+      '';
 
       # tmux
       ta = "tmux attach";

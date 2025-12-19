@@ -14,6 +14,8 @@
       set -sg focus-events on
       set -g status-interval 1
       set -g bell-action none
+      set -g allow-passthrough on
+      set -ga update-environment TERM
     '';
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
