@@ -1,0 +1,130 @@
+#waybar {
+  background: @base00;
+  color: @base05;
+  margin: 3px 5px;
+}
+
+#cava,
+#disk,
+#tray,
+#clock,
+#language,
+#battery,
+#cpu,
+#memory,
+#pulseaudio {
+  background-color: @base02;
+  padding: 0.2rem 0.6rem;
+  margin: 3px 0;
+  border: 2px solid @base0D;
+}
+
+tooltip {
+  background: @base02;
+  border-radius: .7rem;
+  padding: .5rem 1rem;
+  color: @base05;
+  border: 2px solid alpha(@base03, 0.4);
+}
+
+/* ======================================== */
+
+
+#cava {
+  background-color: @base02;
+  border-radius: 1rem;
+  margin: 3px;
+  padding: 0.2rem 1rem;
+}
+
+#disk {
+  margin-left: 1rem;
+  border-radius: 1rem 0px 0px 1rem;
+  border-right: none;
+}
+
+#cpu {
+  border-right: none;
+  border-left: none;
+}
+
+#memory {
+  border-radius: 0px 1rem 1rem 0px;
+  border-left: none;
+}
+
+#battery.charging {
+  color: @base0B;
+}
+
+#battery.warning:not(.charging) {
+  color: @base08;
+}
+
+/* vvvvvvvvvvvvvvvvvvvv Middle vvvvvvvvvvvvvvvvvvvv */
+
+.modules-left #workspaces button.active {
+    border-bottom: none;
+    color: @base05;
+}
+.modules-center #workspaces button.active {
+    border-bottom: none;
+    color: @base05;
+}
+.modules-right #workspaces button.active {
+    border-bottom: none;
+    color: @base05;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 3px;
+  background-color: @base02;
+  margin-left: 1rem;
+  border: 2px solid @base0D;
+}
+
+#workspaces button {
+  color: @base03;
+  border-radius: 1rem;
+  padding: 0.2rem 0.2rem;
+}
+
+#workspaces button.active {
+  color: @base05;
+  background: @base02;
+}
+
+#workspaces button.empty {
+  color: @base00;
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^ Middle ^^^^^^^^^^^^^^^^^^^^ */
+
+#pulseaudio {
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+  border-right: none;
+}
+
+#pulseaudio.muted {
+  color: mix(@base02, @base03, 0.5);
+}
+
+#language,
+#battery {
+  border-radius: 0;
+  border-right: none;
+  border-left: none;
+}
+
+#clock {
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+  border-left: none;
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
