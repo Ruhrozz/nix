@@ -42,6 +42,7 @@
       ls = "eza";
       clear = "clear -x";
       rs = "rsync -ah --info=progress2";
+      duf = "duf -hide special -sort inodes_avail";
       find_suffix = ''
         find . -type f | sed 's/.*\.//' | sort -u
       '';
