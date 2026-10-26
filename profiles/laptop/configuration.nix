@@ -4,7 +4,6 @@
     (modulesPath + "/profiles/qemu-guest.nix")
 
     ./hardware-configuration.nix
-    ./disk-config.nix
     ../../nixos/greeter.nix # greetd
     ../../nixos/ssh.nix # openssh
     ../../nixos/bluetooth.nix # bluetoothctl

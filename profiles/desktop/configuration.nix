@@ -4,10 +4,8 @@
     (modulesPath + "/profiles/qemu-guest.nix")
 
     ./hardware-configuration.nix
-    ./disk-config.nix
     ../../nixos/greeter.nix
     ../../nixos/ssh.nix
-    ../../nixos/bluetooth.nix
     ../../nixos/boot.nix
     ../../nixos/sound.nix
     ../../nixos/nautilus.nix
@@ -15,14 +13,13 @@
     ../../nixos/packages.nix
     ../../nixos/opengl.nix
     ../../nixos/hyprland.nix
-    ../../nixos/gitlab_runner.nix
-    ../../nixos/nvidia.nix
-    ../../nixos/docker.nix
+    # ../../nixos/nvidia.nix
+    # ../../nixos/docker.nix
 
     # For some games
-    ../../nixos/steam.nix
-    ../../nixos/appimage.nix
-    ../../nixos/opentabletdriver.nix
+    # ../../nixos/steam.nix
+    # ../../nixos/appimage.nix
+    # ../../nixos/opentabletdriver.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -49,17 +46,12 @@
   # Users
   users.users.root.initialHashedPassword =
     "$y$j9T$3RQ1ut7aoQme6wRqksDAb.$Ed8Gnohw7LO3PKPfrFtpg63.F/0LhULHYHDhpmh1C/2";
-  users.users.gitlab-runner = {
-    isSystemUser = true;
-    group = "docker";
-  };
-  users.users.${settings.username} = {
+  users.users.malofeev = {
     isNormalUser = true;
+    initialHashedPassword = "$y$j9T$3RQ1ut7aoQme6wRqksDAb.$Ed8Gnohw7LO3PKPfrFtpg63.F/0LhULHYHDhpmh1C/2";
     description = settings.username;
     extraGroups = [ "wheel" "networkmanager" "dialout" "docker" ];
   };
-
-  environment.systemPackages = with pkgs; [ osu-lazer ];
 
   # A lot of mpris packages require it.
   services.gvfs.enable = true;

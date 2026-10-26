@@ -11,8 +11,7 @@
         ${settings.hostname} = nixpkgs.lib.nixosSystem {
 
           modules = [
-            # Import NixOS and Disko configs here
-            inputs.disko.nixosModules.disko
+            # Import NixOS config here
             (./. + "/profiles" + ("/" + settings.profile)
               + "/configuration.nix")
             # Import Home-Manager and Stylix configs here
@@ -82,12 +81,6 @@
     # For handling dotfiles in ~/.config/
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Declarative disk partitioning
-    disko = {
-      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

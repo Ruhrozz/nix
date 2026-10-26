@@ -2,7 +2,6 @@
 
 Some "nix stuff" repository:
 
-- Disko
 - NixOS
 - Home-manager
 - Stylix
@@ -13,13 +12,7 @@ Some "nix stuff" repository:
 
 - Update `./settings.nix`
 - Boot with NixOS USB drive
-- Make disk partitioning with [disko](https://github.com/nix-community/disko?ysclid=m37md4ni64813417409):
-
-```bash
-sudo nix --extra-experimental-features "nix-command flakes" run github:nix-community/disko/latest -- \
-  --mode disko ./profiles/desktop/disk-config.nix
-
-```
+- Partition the disk manually and mount the target filesystems under `/mnt`.
 
 - Update `hardware-configuration.nix`:
 
@@ -27,25 +20,13 @@ sudo nix --extra-experimental-features "nix-command flakes" run github:nix-commu
 sudo nixos-generate-config --show-hardware-config > ./profiles/desktop/hardware-configuration.nix
 ```
 
-> Disko already defines filesystems, so you need to remove redundant defines
+Keep the generated filesystem definitions in `hardware-configuration.nix`.
 
 - Install NixOS itself:
 
 ```bash
 sudo nixos-install --flake .#nixos
 ```
-
-### With [nixos-anywhere](https://github.com/nix-community/nixos-anywhere?ysclid=m37mp47i7c377992155)
-
-- Update `./settings.nix`
-- Run nixos-anywhere to install system via ssh:
-
-```bash
-nix run github:nix-community/nixos-anywhere -- \
-  --generate-hardware-config nixos-generate-config ./profiles/desktop/hardware-configuration.nix --flake .#nixos root@<ip address>
-```
-
-> Default password for root connection is `ASDzxc123`, do not forget to update pass with passwd.
 
 # Remote version installation
 

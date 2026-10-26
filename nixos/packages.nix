@@ -23,13 +23,13 @@ in {
     gnome-calculator # calculator
 
     # For work
-    openvpn
-    shotcut # video editor
-    yt-dlp # download from youtube
-    anydesk # remote desktop
-    libreoffice # documents
-    qgroundcontrol # air fly control
-    android-tools # adb
+    # openvpn
+    # shotcut # video editor
+    # yt-dlp # download from youtube
+    # anydesk # remote desktop
+    # libreoffice # documents
+    # qgroundcontrol # air fly control
+    # android-tools # adb
   ];
 
   fonts.packages = with pkgs; [
